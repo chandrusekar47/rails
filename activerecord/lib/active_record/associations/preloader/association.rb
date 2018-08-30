@@ -42,8 +42,7 @@ module ActiveRecord
 
         # The name of the key on the associated records
         def association_key_name
-          puts "Preloader association owner_by_key #{@klass} #{@model} #{@reflection} #{@preload_scope}"
-          raise NotImplementedError
+          raise NotImplementedError, "Preloader association owner_by_key #{@klass} #{@model} #{@reflection} #{@preload_scope}"
         end
 
         # This is overridden by HABTM as the condition should be on the foreign_key column in
