@@ -57,6 +57,7 @@ module ActiveRecord
         end
 
         def owners_by_key
+          puts "Preloader association owner_by_key #{@klass} #{@owners} #{@reflection} #{@preload_scope}"
           @owners_by_key ||= if key_conversion_required?
                                owners.group_by do |owner|
                                  owner[owner_key_name].to_s
