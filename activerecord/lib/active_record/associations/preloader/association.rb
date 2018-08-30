@@ -42,6 +42,7 @@ module ActiveRecord
 
         # The name of the key on the associated records
         def association_key_name
+          puts "Preloader association owner_by_key #{@klass} #{@owners} #{@reflection} #{@preload_scope}"
           raise NotImplementedError
         end
 
@@ -57,7 +58,6 @@ module ActiveRecord
         end
 
         def owners_by_key
-          puts "Preloader association owner_by_key #{@klass} #{@owners} #{@reflection} #{@preload_scope}"
           @owners_by_key ||= if key_conversion_required?
                                owners.group_by do |owner|
                                  owner[owner_key_name].to_s
