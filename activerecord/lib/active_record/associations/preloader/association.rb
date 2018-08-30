@@ -42,7 +42,7 @@ module ActiveRecord
 
         # The name of the key on the associated records
         def association_key_name
-          puts "Preloader association owner_by_key #{@klass} #{@owners} #{@reflection} #{@preload_scope}"
+          puts "Preloader association owner_by_key #{@klass} #{@model} #{@reflection} #{@preload_scope}"
           raise NotImplementedError
         end
 
